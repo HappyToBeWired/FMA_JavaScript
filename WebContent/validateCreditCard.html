@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src="validate.js"></script>
+<title>Validate Credit Card</title>
+</head>
+<body onload="detectBrowser()">
+<div>
+<form>
+<input type="text" id="creditCardNumber" maxlength="16" onchange="Validate()"></input><p><span id="impWarn">
+</span></p>
+</form>
+</div>
+<p>Your Number is: <span id="ypourote"></span></p>
+<p>Direct: <span id="count"></span></p>
+
+<p>Warn: <span id="warn"></span></p>
+<p>Browser An Number <span id="browser"></span></p>
+
+
+
+<div>
+<form>
+<input type="text" id="priceOne" maxlength="7" onchange="Validate()"></input><p><span id="impWarn">
+</span></p>
+<input type="text" id="priceTwo" maxlength="7" onchange="Validate()"></input><p><span id="impWarn">
+</span></p>
+<button type="button" value="send" onclick="orderForm()">Reset</button>
+</form>
+</div>
+
+<p>Total £ <span id="outTot"></span></p>
+</body>
+</html>
