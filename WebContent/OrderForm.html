@@ -4,10 +4,14 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<script type="text/javascript" src="orderForm.js" ></script>
+<link href="smoothie.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="smoothie_main.js" ></script>
 <title>Order Form</title>
 </head>
-<body>
+<body onload="smoothieOrder()">
+<div id="output" >
+</div>
+
 <div>
 <form  onsubmit="getTotalInvoice();return false;" >
 <fieldset>

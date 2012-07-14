@@ -1,0 +1,21 @@
+.display
+{
+	float:left;
+	color:blue;
+	border: solid 1px grey;
+	margin: 0 .7em .7em 0;
+	padding: .7em;
+	width: 100px;
+	
+}
+
+.display p
+{
+font-size:.5em;
+}
+
+.display h3
+{
+font-size:.7em;
+
+}
