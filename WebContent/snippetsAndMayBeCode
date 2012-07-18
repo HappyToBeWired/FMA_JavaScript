@@ -1,0 +1,10 @@
+//holds filtered product list
+var filteredDrinksAndSmoothies =   {                                                  
+}; 
+var filtered = filteredDrinksAndSmoothies;
+
+http://stackoverflow.com/questions/920930/how-to-create-json-by-javascript-for-loop
+
+for (var i = 0; i < stockView.length; i++) {
+	filtered.push({id: status.options[i].text, optionValue: status.options[i].value});
+}

@@ -1,21 +1,101 @@
+@charset "utf-8";
+/* CSS Document */
+/* The first part of this css is from a template received in a Birkbeck class.
+the second part is built of components derived from the Bovver Boots TMA/FMA design from
+the Birkbeck Dreamweaver course*/
+/*
+The first reset rule removes all spacing from around the targeted elements.
+*/
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, img {
+	margin:0;
+	padding:0;
+}
+
+/*
+Browsers will sometimes place a border around images that are enclosed in anchor (link) tags.
+This rule removes that border.
+*/
+img {
+	border:none;
+}
+
+/*
+Set all headings to 1em with normal font-weight.
+*/
+h1, h2, h3, h4, h5, h6 {
+	font-size: 1em;
+	font-weight: 400;
+}
+
+/*
+Remove bullets from lists.
+These may be switched on again later for lists in the content area
+or we may choose to use background-images to create unique list bullets
+*/
+ul, ol {
+	list-style-type: none;
+}
+
+/* 
+Set some defaults that will be inherited by all of body's children
+*/
+body {
+	/* 
+	font-family: This font stack gives maximum cross-browser legibility 
+	*/
+	font-family: Verdana, Geneva, sans-serif;
+	/* 
+	(background-)color: Hex shorthand for colours - can be used when hex is made up of 3 "pairs" 
+	*/
+	color: #000; 
+	background-color: #fff;
+	/* 
+	font-size: Use the browsers default as starting point. By explicitly setting this to 100%, 
+	we fix several inheritance bugs that exist in older browsers.
+	We can then use "target / context = result" method when styling individual elements.
+	See heading: "Do I really have to thank IE for this?" on http://www.alistapart.com/articles/fluidgrids/
+	and: http://www.alistapart.com/articles/howtosizetextincss/
+	*/
+	font-size: 100%;
+}
+
+
+
+
+
+
 .display
 {
 	float:left;
-	color:blue;
+	color:black;
 	border: solid 1px grey;
-	margin: 0 .7em .7em 0;
+	margin: 0 .3em .3em 0;
 	padding: .7em;
-	width: 100px;
+	width: 200px;
+	height:200px;
 	
 }
 
 .display p
 {
-font-size:.5em;
+font-size:.6em;
+/*http://www.w3schools.com/cssref/pr_text_text-transform.asp*/
+text-transform:capitalize;
 }
 
 .display h3
 {
-font-size:.7em;
+font-size:.8em;
+font-family:"Times New Roman", Times, serif;
+}
 
+#orderForm
+{
+clear:both;
+}
+
+fieldset
+
+{
+float:left;
 }
