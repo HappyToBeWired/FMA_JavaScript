@@ -95,7 +95,18 @@ clear:both;
 }
 
 fieldset
-
 {
 float:left;
+}
+
+#cart
+{
+clear:both;
+color:red;
+border: solid 2px orange;
+margin: 0 .3em .3em 0;
+padding: .7em;
+width: 200px;
+height:200px;
+
 }

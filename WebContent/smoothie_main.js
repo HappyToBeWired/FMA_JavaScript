@@ -29,33 +29,41 @@ var drinksAndSmoothies =
 var stockView = drinksAndSmoothies.stock_status;  
 
 
-
-
-
  var results = "";
 // outputs stock in divs
   for(var i=0; i<stockView.length; i++) 
   {
-	  
+	  var ident = stockView[i].product_id;
 	  results += "<div class='display'>";
-	  results += "<h3>" + stockView[i].product_name + "</h3>";
-	  results += "<p>Product Number: <span>"; 
-      results +=  stockView[i].product_id + "</span></p>";
-      results += "<p>Product Type: <span>";
-      results += stockView[i].product_type + "</span></p>"; 
-      results += "<p>£<span>";
-      results += stockView[i].price + "</span> per case.</p>"; 
-      results += "<p>In Stock: <span>";
-      results += stockView[i].in_stock_quantity + "</span></p>";
+	  var name = stockView[i].product_name;
+	  results += "<h3>" + name + "</h3>";
+	  results += "<p>Product Number: <span>" + ident + "</span></p>";  
+      results += "<p>Product Type: <span>" + stockView[i].product_type + "</span></p>"; 
+      var price = stockView[i].price;
+      results += "<p>£<span>" + price + "</span> per case.</p>";
+      var stock =stockView[i].in_stock_quantity;
+      results += "<p>In Stock: <span>" + stock + "</span></p>";
       results += "<img src='images/" + stockView[i].image + "' alt='" +stockView[i].image+ "' height='100' width='100' />";
+      //
+      //REMEMBER ONCHANGE FUNCTION
+      //
+      results += "<p>Pick the Quantity</p><select name='" + ident + "' id='" + ident + "' onchange='getQuantity(" + ident +  ")'>";
+      for ( var j=0; j<=stock; j++){
+    	  results += '<option value="' + j + '">' + j +'</option>';
+    	  }
+      results +="</select>";
       results += "</div>";
-
+      var div = document.getElementById("output");
+      div.innerHTML = results; 
+      
   }
-  var div = document.getElementById("output");
-
-      div.innerHTML = results;    
-
-     
- 
 }
+// retrieves quantity to be ordered from drop down list
+function getQuantity(i){
+	var id = i;
+	//var name = n;
+	//var name = p;
+	var quant = document.getElementById(id).selectedIndex; 
+	document.getElementById("cart").innerHTML=id;
 
+}
