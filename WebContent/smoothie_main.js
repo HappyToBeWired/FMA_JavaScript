@@ -1,7 +1,6 @@
-function smoothieOrder() {
-  
-
-var drinksAndSmoothies =   
+function database()
+{
+	var drinksAndSmoothies =   
 { "stock_status":     [
   {"product_id":"1","product_type":"smoothie","product_name":"Raspberry & Pear","brief_description":"Healthy combination of British fruits with a banana base.","in_stock_quantity":"50","ordered_quantity":"","image":"pearAndraspbery.jpeg","price":"10.00"},
   {"product_id":"2","product_type":"smoothie","product_name":"Apricot & Dandilion","brief_description":"Weeds and a furry plum yum.","in_stock_quantity":"40","ordered_quantity":"","image_location":"","price":"12.00"},
@@ -20,7 +19,23 @@ var drinksAndSmoothies =
      {"product_id":"001","ordered_quantity":"" }           
                     
      ]
+	
+
+	
 };
+	
+	return 	drinksAndSmoothies;
+	}
+
+
+
+
+
+
+function smoothieOrder() {
+  
+	var drinksAndSmoothies = database();
+
 
 
 
