@@ -53,6 +53,6 @@ function detectBrowser()
 
 
 //returns value of 2 inputs plus 17.5%
-getTotalInvoice(firstNum, secondNum) 
+getTotalInvoice(firstNum, secondNum);
 
 {}

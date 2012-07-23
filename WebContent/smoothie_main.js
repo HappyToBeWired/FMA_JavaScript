@@ -1,4 +1,6 @@
-function database()
+
+//holds product detail
+function productDetail()
 {
 	var drinksAndSmoothies =   
 { "stock_status":     [
@@ -19,27 +21,16 @@ function database()
      {"product_id":"001","ordered_quantity":"" }           
                     
      ]
-	
-
-	
+		
 };
 	
 	return 	drinksAndSmoothies;
 	}
 
-
-
-
-
-
 function smoothieOrder() {
   
-	var drinksAndSmoothies = database();
-
-
-
-
-  
+	var drinksAndSmoothies = productDetail();
+ 
 //truncates 2 parts of json stock status  name
 var stockView = drinksAndSmoothies.stock_status;  
 
@@ -63,7 +54,7 @@ var stockView = drinksAndSmoothies.stock_status;
       //CREATE OBJECT FOR DROPDOWN & ADD SET ATTRIBUTES. DO THIS THROUGH A FUNCTION.
       //
      
-     // http://stackoverflow.com/questions/7203820/javascript-add-attribute-method-question
+      // http://stackoverflow.com/questions/7203820/javascript-add-attribute-method-question
       var selector = Dropdown(stock,ident);
       results += selector;
       //call function to add to cart
@@ -96,6 +87,55 @@ function pushtoCartJson(i)
 {var amount = 1 + document.getElementById(i).selectedIndex; 
  document.getElementById("cart").innerHTML="<p>"+amount+"</p>";}
 //CREATE REGEX FOR FORM FEILDS
+//http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
+//Credit Card Number Validation
+function ValidateCreditCardNumber()
+{
+	var valMe = document.getElementById("CreditCardNumber").value;
+    var isVal=isValidCreditCard(valMe);
+    if(isVal== true)
+    	{
+    	inform="";
+    	}
+    else
+        {
+    	inform="Not a valid Number ";
+    	} 
+    document.getElementById("creditCardReply").innerHTML=inform;   
+
+} 
+function isValidCreditCard(creditCardNumber)
+{	
+var valid = new RegExp("[0-9]{16}");
+return valid.test(creditCardNumber);
+}
+
+
+//CVS validation
+function ValidateCVSNumber()
+{
+	var valMe = document.getElementById("CVS").value;
+    var isVal=isValidCVS(valMe);
+    if(isVal== true)
+    	{
+    	inform="";
+    	}
+    else
+        {
+    	inform="Not a valid Number ";
+    	} 
+    document.getElementById("CVSReply").innerHTML=inform;   
+
+} 
+
+function isValidCVS(cvs)
+{	
+var valid = new RegExp("[0-9]{3}");
+return valid.test(cvs);
+}
+
+
+
 //EXTEND REGEX CLASSES TO TRIGGER ON SUBMIT AND PREVENT SUBMISSION
 // ADD ITEMS TO CART ALSO REMOVE WHEN DELETED USE MORE JSON
 //CREATE PRINT RECIEPT
