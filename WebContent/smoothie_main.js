@@ -40,7 +40,7 @@ var stockView = drinksAndSmoothies.stock_status;
   for(var i=0; i<stockView.length; i++) 
   {
 	  var ident = stockView[i].product_id;
-	  results += "<div class=\"display\">";
+	  results += "<fieldset class=\"display\">";
 	  var name = stockView[i].product_name;
 	  results += "<h3>" + name + "</h3>";
 	  results += "<p>Product Number: <span>" + ident + "</span></p>";  
@@ -60,7 +60,7 @@ var stockView = drinksAndSmoothies.stock_status;
       //call function to add to cart
       var button = "<input type='button' onclick='pushtoCartJson("+ident+")'>";
       results += button;
-      results += "</div>";
+      results += "</fieldset>";
       var div = document.getElementById("output");
       div.innerHTML = results; 
       }
@@ -89,25 +89,38 @@ function pushtoCartJson(i)
 //CREATE REGEX FOR FORM FEILDS
 //http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 //Credit Card Number Validation
-function ValidateCreditCardNumber()
+
+function validation(a)
+
+{
+	
+
+}
+
+
+
+function ValidateCreditCardNumber(id)
 {
 	var valMe = document.getElementById("CreditCardNumber").value;
-    var isVal=isValidCreditCard(valMe);
-    if(isVal== true)
-    	{
-    	inform="";
-    	}
-    else
-        {
-    	inform="Not a valid Number ";
-    	} 
-    document.getElementById("creditCardReply").innerHTML=inform;   
+	var isVal=isValidCreditCard(valMe);
 
 } 
 function isValidCreditCard(creditCardNumber)
 {	
 var valid = new RegExp("[0-9]{16}");
-return valid.test(creditCardNumber);
+//return valid.test(creditCardNumber);
+
+
+if(valid == true)
+	{
+	inform="Thank You";
+	}
+else
+    {
+	inform="Not a valid Number ";
+	} 
+document.getElementById("creditCardReply").innerHTML=inform; 
+
 }
 
 
@@ -118,7 +131,7 @@ function ValidateCVSNumber()
     var isVal=isValidCVS(valMe);
     if(isVal== true)
     	{
-    	inform="";
+    	inform="Thank You";
     	}
     else
         {

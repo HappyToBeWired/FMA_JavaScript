@@ -12,7 +12,7 @@
     <div id="output">
     </div>
     <div id = "orderForm">
-      <form  onsubmit="getTotalInvoice();return false;" >
+      <form   onsubmit="getTotalInvoice();return false;" >
         <fieldset>
           <p>First Name (as appears on credit card)*<span id="Name1BillingReply" class="nag"></span></p>
           <input type="text" id="Name1Billing" maxlength="30"></input>
@@ -27,7 +27,7 @@
           <p>Post code*</p>
           <input type="text" id="PostCodeBilling" maxlength="8"></input>
           <p>Credit Card Number*<span id="creditCardReply" class="nag"></span></p>
-          <input type="text" id="CreditCardNumber" maxlength="16" onblur="ValidateCreditCardNumber()"></input>
+          <input type="text" id="CreditCardNumber" maxlength="16" onblur="ValidateCreditCardNumber('CreditCardNumber')"></input>
           <p>3 Digit Security Number*<span id="CVSReply" class="nag"></span></p>
           <input type="text" id="CVS" maxlength="3" onblur="ValidateCVSNumber()"></input>
         </fieldset>
