@@ -135,18 +135,22 @@ function pushtoCartJson(ident)
     var amount = document.getElementById(ident).selectedIndex;
     
     //http://stackoverflow.com/questions/1182082/check-for-a-value-in-a-json-object
-    var orderedItems = cart();
-    pushToCart = orderedItems.orders;	
+    var orderedItems = cart(item);
+    var item = item;
+    sendToCart = orderedItems.orders;	
     for(var j=0; j<stockView.length; j++) 
     {	
-   	 if(stockView[j].product_id == ident)
-   		pushToCart.push({ product_id:stockView[j].product_id,product_name:stockView[j].product_name,
-       	 price:stockView[j].price, ordered_quantity:amount});
-   	   
+    	if(stockView[j].product_id == ident)
+    	{ var prodId = stockView[j].product_id;
+          var prodName = stockView[j].product_name;
+          var prodPrice = stockView[j].price;	
+   	      var  sendToCart = { product_id:"88", product_name:"rupert",price:"200",ordered_quantity:"96" };
+    	}
+    	
     }  
     
     
-    for(var k=0; k<pushToCart.length; k++) 
+    for(var k=0; k<sendToCart.length; k++) 
          {	
          var results ="<div>";	
        	 results += "<p style='background-color:blue'>" + pushToCart[k].product_id + pushToCart[k].product_name + pushToCart[k].price + pushToCart[k].ordered_quantity
@@ -155,8 +159,7 @@ function pushtoCartJson(ident)
          }
     var div =  document.getElementById("cart");
     div.innerHTML = results; 
-    
-    return orderItem;
+    var orderItem =sendToCart;
     
      }
     
@@ -170,26 +173,29 @@ function pushtoCartJson(ident)
 //http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 //Credit Card Number Validation
 
-function ValidateCreditCardNumber(id)
+
+
+//Credit Card validation
+function ValidateCreditCardNumber()
 {
 	var valMe = document.getElementById("CreditCardNumber").value;
-	var isVal=isValidCreditCard(valMe);
+    var isVal=isValidCreditCard(valMe);
+    if(isVal== true)
+    	{
+    	inform="Thank You";
+    	}
+    else
+        {
+    	inform="Not a valid Number ";
+    	} 
+    document.getElementById("creditCardReply").innerHTML=inform;   
+
 } 
-function isValidCreditCard(creditCardNumber)
+
+function isValidCreditCard(CCN)
 {	
 var valid = new RegExp("[0-9]{16}");
-
-//return valid.test(creditCardNumber);
-if(valid == true)
-	{
-	inform="Thank You";
-	}
-else
-    {
-	inform="Not a valid Number ";
-	} 
-document.getElementById("creditCardReply").innerHTML=inform; 
-
+return valid.test(CCN);
 }
 
 
@@ -217,8 +223,22 @@ return valid.test(cvs);
 }
 
 
+//address line validation
+function ValidateAddress()
+{
+	var valMe = document.getElementById("CreditCardNumber").value;
+    var isVal=isValidCreditCard(valMe);
+    if(isVal== true)
+    	{
+    	inform="Thank You";
+    	}
+    else
+        {
+    	inform="Not a valid Number ";
+    	} 
+    document.getElementById("creditCardReply").innerHTML=inform;   
 
-
+} 
 //EXTEND REGEX CLASSES TO TRIGGER ON SUBMIT AND PREVENT SUBMISSION
 // ADD ITEMS TO CART ALSO REMOVE WHEN DELETED USE MORE JSON
 //CREATE PRINT RECIEPT

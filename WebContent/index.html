@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link href="smoothie.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="smoothie_main.js"></script>
+<title>Order Form</title>
+</head>
+  <body onload="smoothieOrder()">
+    <div id="output">
+    </div>
+    <div id = "orderForm">
+      <form   onsubmit="getTotalInvoice();return true;" >
+        <fieldset>
+          <p>First Name (as appears on credit card)*<span id="Name1BillingReply" class="nag"></span></p>
+          <input type="text" id="Name1Billing" maxlength="30"></input>
+          <p>Second Name (as appears on credit card)*<span id="Name2BillingReply" class="nag"></span></p>
+          <input type="text" id="Name2Billing" maxlength="30"></input>
+          <p>Address 1*</p>
+          <input type="text" id="Addr1Billing" maxlength="30"></input>
+          <p>Address 2</p>
+          <input type="text" id="Addr2Billing" maxlength="30"></input>
+          <p>City*</p>
+          <input type="text" id="CityBilling" maxlength="30"></input>
+          <p>Post code*</p>
+          <input type="text" id="PostCodeBilling" maxlength="8"></input>
+          <p>Credit Card Number*<span id="creditCardReply" class="nag"></span></p>
+          <input type="text" id="CreditCardNumber" maxlength="16" onblur="ValidateCreditCardNumber()"></input>
+          <p>3 Digit Security Number*<span id="CVSReply" class="nag"></span></p>
+          <input type="text" id="CVS" maxlength="3" onblur="ValidateCVSNumber()"></input>
+        </fieldset>
+        <fieldset>
+          <p>Full Name</p>
+          <input type="text" id="NameDel" maxlength="30"></input>
+          <p>Address 1*</p>
+          <input type="text" id="Addr1Delivery" maxlength="30"></input>
+          <p>Address 2</p>
+          <input type="text" id="Addr2Delivery" maxlength="30"></input>
+          <p>City*</p>
+          <input type="text" id="CityDelivery" maxlength="30"></input>
+          <p>Post code*</p>
+          <input type="text" id="PostCodeDelivery" maxlength="8"></input>
+          <button type ="submit">Press</button>
+        </fieldset>
+      </form>
+    </div>
+    <div id="cart">
+    </div>
+    <p>Total £ <span id="outTot"></span></p>
+  </body>
+</html>
