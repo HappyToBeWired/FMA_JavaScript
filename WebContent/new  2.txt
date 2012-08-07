@@ -1,0 +1,3 @@
+var len = pushToCart.length+1;
+   		pushToCart[len]({"product_id":prodId,"product_name":prodName,
+   			"price":prodPrice, "ordered_quantity":amount});
